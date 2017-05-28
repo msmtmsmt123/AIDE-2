@@ -90,7 +90,7 @@ public class About_ShiYongActivity extends BaseActivity implements View.OnClickL
             case R.id.line_url:
                 //判断如果点击了“开源地址”布局，则使用隐式intent访问项目的开源地址
                 Intent intenet=new Intent(Intent.ACTION_VIEW);
-                intenet.setData(Uri.parse("http://www.github.com/provdboy"));
+                intenet.setData(Uri.parse("http://www.github.com/provdboy/aide"));
                 startActivity(intenet);
                 break;
             default:

@@ -117,7 +117,7 @@
                 android:gravity="center|left"
                 android:textColor="@color/qianblue"
                 android:layout_marginRight="15dp"
-                android:text="www.github.com/provdboy"/>
+                android:text="http://www.github.com/provdboy/aide"/>
         </LinearLayout>
 
     </LinearLayout>
