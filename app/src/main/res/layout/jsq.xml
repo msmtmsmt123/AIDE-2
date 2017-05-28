@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/zwcolor"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textViewjsq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:maxLength="10"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="15dip"
+            android:background="@xml/shape2"
+            android:gravity="center_vertical|right"
+            android:text="@string/ling"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="58dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dip"
+            android:layout_weight="0.2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/qingchu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/qingchu"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/shanchu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/shanchu"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/zhengfu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/zhengfu"
+                style="@style/jisuanqi"/>
+
+            <Button
+                android:id="@+id/chu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/chu"
+                style="@style/jisuanqi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dip"
+            android:layout_weight="0.2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/qi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/qi"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/ba"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/ba"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/jiu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/jiu"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/cheng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/cheng"
+                style="@style/jisuanqi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dip"
+            android:layout_weight="0.2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/si"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/si"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/wu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/wu"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/liu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/liu"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/jian"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/jian"
+                style="@style/jisuanqi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dip"
+            android:layout_weight="0.2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/yi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/yi"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/er"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/er"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/san"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shape3"
+                android:text="@string/san"
+                style="@style/jisuanqi"/>
+
+            <Button
+                android:id="@+id/jia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_weight="1"
+                android:background="@xml/shap1"
+                android:text="@string/jia"
+                style="@style/jisuanqi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dip"
+            android:layout_weight="0.2"
+            android:weightSum="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ling"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="0.245"
+                android:background="@xml/shape3"
+                android:text="@string/ling"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/dian"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="0.245"
+                android:background="@xml/shape3"
+                android:text="@string/dian"
+                style="@style/jisuanqi" />
+
+            <Button
+                android:id="@+id/deng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="0.51"
+                android:layout_marginRight="5dip"
+                android:background="@xml/shap1"
+                android:text="@string/deng"
+               style="@style/jisuanqi" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

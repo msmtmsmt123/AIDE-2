@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/line_bianqian"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bianqianbj">
+    <com.example.nianxin.gongjuxiang.my.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.nianxin.gongjuxiang.my.TitleLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.8"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:weightSum="1"
+            android:background="@xml/bianqiansousuoshap"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageview1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.125"
+                android:src="@drawable/ic_search_white_24dp" >
+            </ImageView>
+
+            <EditText
+                android:id="@+id/edittext1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:background="@null"
+                android:hint="@string/sousuodc"
+                android:inputType="textNoSuggestions">
+            </EditText>
+            <ImageButton
+                android:id="@+id/image1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.125"
+                android:layout_gravity="center"
+                android:background="@xml/bianqiansousuoshap"
+                android:src="@drawable/ic_cancel_white_24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
+</LinearLayout>

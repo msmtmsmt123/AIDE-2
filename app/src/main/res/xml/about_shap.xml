@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item android:state_focused="true"><shape>
+        <stroke android:width="1dp" android:color="#FFE7DFCC" />
+        <!--半径-->
+        <corners android:radius="2dp" />
+    </shape></item>
+    <item><shape>
+        <!--<点击前颜色>-->
+        <solid android:color="#FFE7DFCC" />
+        <!--点击前描边-->
+        <stroke android:width="5dp" android:color="#FFE7DFCC" />
+        <!--点击前圆角-->
+        <corners android:radius="5dip" />
+    </shape></item>
+
+    <!--<item><shape>-->
+    <!--<padding-->
+    <!--android:bottom="20dp"-->
+    <!--/>-->
+    <!--</shape></item>-->
+
+
+</selector>

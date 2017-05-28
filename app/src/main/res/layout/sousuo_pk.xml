@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qianbai"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/line_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:visibility="gone"
+        android:background="@color/qianbai"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.8"
+            android:background="@xml/dancisousuoshap"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.125"
+                android:src="@drawable/ic_search_white_24dp" />
+
+            <EditText
+                android:id="@+id/edittext1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:background="@null"
+                android:hint="搜索或输入网址"
+                android:imeOptions="actionGo"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1">
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/image1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="0.125"
+                android:background="@xml/dancisousuoshap"
+                android:src="@drawable/ic_cancel_white_24dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_quxiao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@null"
+            android:text="@string/quxiao"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line_noinput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:visibility="visible"
+        android:background="@color/qianbai"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.125"
+            android:src="@drawable/ic_search_white_24dp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="@null"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/edittext1_noinput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center|left"
+                android:textSize="20sp"
+                android:hint="搜索或输入网址"
+                android:imeOptions="actionGo"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1">
+            </TextView>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/bt_shuaxin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_loop_white_24dp"
+            android:background="@xml/button_shap"
+            android:text="@string/quxiao"
+            android:textSize="16dp" />
+        </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.84"
+        android:background="@color/zwcolor">
+
+        <requestFocus />
+    </WebView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/bt_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@xml/button_shap"
+            android:src="@drawable/ic_navigate_before_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/bt_next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@xml/button_shap"
+            android:src="@drawable/ic_navigate_next_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/bt_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@xml/button_shap"
+            android:src="@drawable/ic_home_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@xml/button_shap"
+            android:src="@drawable/ic_loop_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@xml/button_shap"
+            android:src="@drawable/ic_power_settings_new_white_24dp" />
+    </LinearLayout>
+</LinearLayout>

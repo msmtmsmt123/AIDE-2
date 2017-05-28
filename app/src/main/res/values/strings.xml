@@ -1,0 +1,79 @@
+<resources>
+
+    <string name="app_name">AIDE</string>
+    <string name="textView1">你好！安卓！</string>
+    <string name="queding">确定</string>
+    <string name="tuichu">退出</string>
+    <string name="fanhui">返回</string>
+    <string name="quxiao">取消</string>
+    <string name="button1">河源职业技术学院</string>
+    <string name="button2">九游</string>
+    <string name="button3">百度一下</string>
+    <string name="button4">拨打电话:552</string>
+    <string name="denglu">登录</string>
+    <string name="jsq">计算器</string>
+    <string name="zh">1209799738</string>
+    <string name="mm">577520</string>
+    <string name="jia">+</string>
+    <string name="jian">-</string>
+    <string name="cheng">×</string>
+    <string name="deng">=</string>
+    <string name="chu">/</string>
+    <string name="ling">0</string>
+    <string name="yi">1</string>
+    <string name="er">2</string>
+    <string name="san">3</string>
+    <string name="si">4</string>
+    <string name="wu">5</string>
+    <string name="liu">6</string>
+    <string name="qi">7</string>
+    <string name="ba">8</string>
+    <string name="jiu">9</string>
+    <string name="dian">.</string>
+    <string name="qingchu">C</string>
+    <string name="shanchu">D</string>
+    <string name="zhengfu">+/-</string>
+    <string name="ditu">地图：你可以查看你想要的地点的地图，全世界都将尽在眼底。</string>
+    <string name="zhinanzhen">指南针：你可以查看你所正对的方向，东西南北将一览无遗。</string>
+    <string name="jisuanqi">计算器：你可以进行所需要的简单日常计算，加减乘除将伴你出行</string>
+    <string name="rili">日历：你可以清楚的知道今天的日子，聚会生日将不会再忘记。</string>
+    <string name="bianqian">便签：你可以记录一些文字，灵光将不会再只是一现而过。</string>
+    <string name="sousuo">搜索：你可以再百度搜索引擎中查找一些你所需要的资料数据，无数的资料将触手可及。</string>
+    <string name="shoudiantong">手电筒：你将可以打开手机的手电筒，黑暗将会被你而终结。</string>
+    <string name="neicunqingli">内存清理：你可以对手机后台程序进行清理，内存将为你而释放。</string>
+    <string name="dianhua">电话：你可以选择拨打电话，不远万里将近在咫尺。</string>
+    <string name="duanxin">短信：你可以发送短信，心中所想，将瞬间能传送出千里之外。</string>
+    <string name="xinjian">新建</string>
+    <string name="baocun">保存</string>
+    <string name="bianq">便签</string>
+    <string name="xiazaidizhi">下载地址：</string>
+    <string name="xiazailujing">下载路径：</string>
+    <string name="shengyu">剩余</string>
+    <string name="yixue">已学</string>
+    <string name="danciliebiao">单词列表</string>
+    <string name="yiwancheng">已记忆：</string>
+    <string name="kaishijiyi">开始记忆</string>
+    <string name="jizhule">记住了</string>
+    <string name="meijizhu">没记住</string>
+    <string name="tishi">小提示：电话录音功能开启后，会在手机来电时调用本地录音机进行后台录音，文件存储在文件管理根目录下；通话记录备份功能开启后，会在文件管理根目录下通过txt格式文档进行备份，文件名为：shuju.txt。</string>
+    <string name="zhuyi">【注】部分功能需要给予开机自启权限才能正常使用;备份后的文件名为：shuju.txt；录音功能产生文件为：***.mp3</string>
+    <string-array name="week_name">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+    <string name="sousuodc">请输入要搜索的内容</string>
+    <string name="gongnengjieshao">功能操作</string>
+    <string name="shiyongxuzhi">使用须知</string>
+    <string name="yijianfankui">意见反馈</string>
+    <string name="about">关于</string>
+    <string name="xuzhi1">一：本应用部分功能需要给予权限才能使用，否则将会导致部分功能异常（例如：开机自启、定位、网络、摄像头……）</string>
+    <string name="xuzhi">二：于本作品所用到的SDK（例如：百度地图SDK）、以及GitHub优秀开源项目（例如：LitePal）等，特此作出衷心的感谢！！！</string>
+    <string name="banbengengxin">版本更新</string>
+    <string name="version_name">1.0.0</string>
+    <string name="can_not_find_version_name">1</string>
+</resources>

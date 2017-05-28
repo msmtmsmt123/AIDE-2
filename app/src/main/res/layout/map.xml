@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <com.example.nianxin.gjxtest.MyMultiLineEditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="0dp"
+        android:textSize="18dp"
+        android:gravity="top"
+        android:lineSpacingMultiplier="1.5"
+        android:lineSpacingExtra="10dp"
+        android:singleLine="false"
+
+        />
+
+</LinearLayout>

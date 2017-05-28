@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/qianbai"
+    android:orientation="horizontal"
+    android:weightSum="1">
+    <ImageButton
+        android:id="@+id/button1"
+        android:src="@drawable/ic_arrow_back_white_24dp"
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:background="@xml/button_shap"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="0.7"
+        style="@style/btText"
+        android:gravity="center"
+        android:text="@string/bianq"/>
+    <ImageButton
+        android:id="@+id/button2"
+        android:src="@drawable/ic_add_white_24dp"
+        android:background="@xml/button_shap"
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:layout_height="match_parent" />
+</LinearLayout>
