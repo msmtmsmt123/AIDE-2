@@ -326,7 +326,7 @@ public class SousuoActivity extends BaseActivity implements View.OnClickListener
             // obj为1，代表下载完成
             else if (message.what == 1) {
                 progressDialog.dismiss();
-                Snackbar.make(webView,"下载完成，文件位置：" + astring,Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(webView,"下载完成，文件位置：" + astring,Snackbar.LENGTH_LONG).show();
             }
         }
     };
@@ -348,16 +348,14 @@ public class SousuoActivity extends BaseActivity implements View.OnClickListener
         public void run() {
             try {
                 // 为当前的app在内存中新建文件夹
-                File dir = new File("storage/emulated/0/Application");
+                File dir = new File("storage/emulated/0/AIDE/app");
                 if (!dir.exists()) {
                     dir.mkdirs();
-                    dir = new File("storage/emulated/0/Download");
-                    astring = "storage/emulated/0/Download";
+                    dir = new File("storage/emulated/0/AIDE/app");
+                    astring = "storage/emulated/0/AIDE/app";
                 } else {
-                    astring = "storage/emulated/0/Application";
+                    astring = "storage/emulated/0/AIDE/app";
                 }
-//                if (!dir.exists())
-//                    dir.mkdirs();
                 URL url = new URL(src);
                 // 打开连接
                 URLConnection urlConnection = null;

@@ -134,14 +134,14 @@ public class PhoneListenerActivity extends AppCompatActivity implements View.OnC
                 Phone_visb_go_Activity.actionStrat(PhoneListenerActivity.this);
                 break;
             case R.id.visibility_nextgo:
-                Intent intent1 = new Intent(this, MyService_beifen.class);
-                startService(intent1);
-                Snackbar.make(v,"数据成功备份",Snackbar.LENGTH_SHORT).show();
-                Log.d("", "onClick: 备份成功了");
                 boolean b = isServiceWork(PhoneListenerActivity.this, "com.example.nianxin.gongjuxiang.service.MyService_beifen");
                 if (b==true){
-                    Intent intent2 = new Intent(this, MyService_beifen.class);
-                    stopService(intent2);
+                    Snackbar.make(v,"数据刚刚备份过！",Snackbar.LENGTH_SHORT).show();
+                }else {
+                    Intent intent1 = new Intent(this, MyService_beifen.class);
+                    startService(intent1);
+                    Snackbar.make(v, "数据成功备份", Snackbar.LENGTH_SHORT).show();
+                    Log.d("", "onClick: 备份成功了");
                 }
                 break;
             default:
@@ -150,9 +150,20 @@ public class PhoneListenerActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public static void actionStart(Context context) {
-        Intent intent = new Intent(context, PhoneListenerActivity.class);
-        context.startActivity(intent);
+/**
+* wenming
+* created by:nianxin
+* created 2017/6/2 21:29.
+* action:重写finsh方法，判断服务二如果在运行，则关闭它
+*/
+    @Override
+    public void finish() {
+        boolean b = isServiceWork(PhoneListenerActivity.this, "com.example.nianxin.gongjuxiang.service.MyService_beifen");
+        if (b==true){
+            Intent intent2 = new Intent(this, MyService_beifen.class);
+            stopService(intent2);
+        }
+        super.finish();
     }
 
     /**
@@ -177,5 +188,10 @@ public class PhoneListenerActivity extends AppCompatActivity implements View.OnC
             }
         }
         return isWork;
+    }
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent(context, PhoneListenerActivity.class);
+        context.startActivity(intent);
     }
 }

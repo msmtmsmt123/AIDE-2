@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.nianxin.gongjuxiang.activity.PhoneListenerActivity;
 
 import java.io.File;
+import java.util.Random;
 
 public class PhoneService extends Service {
     // 电话管理器
@@ -57,6 +58,11 @@ public class PhoneService extends Service {
         public void onCallStateChanged(int state, String incomingNumber) {
             super.onCallStateChanged(state, incomingNumber);
             try {
+                // 为当前的app在内存中新建文件夹
+                File dir = new File("storage/emulated/0/AIDE/Music");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
                 switch (state) {
                     case TelephonyManager.CALL_STATE_IDLE://.空闲状态。
                         if (mRecorder != null) {
@@ -80,7 +86,7 @@ public class PhoneService extends Service {
                         //3.设置录制的文件输出的格式
                         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
                         //4.指定录音文件的名称
-                        File file = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".mp3");
+                       File file = new File(dir + "/" + new Random().nextInt(999999999) + ".mp3");
                         mRecorder.setOutputFile(file.getAbsolutePath());
                         //5.设置音频的编码
                         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);

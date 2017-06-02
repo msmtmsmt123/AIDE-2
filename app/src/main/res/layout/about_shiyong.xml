@@ -68,7 +68,7 @@
                 android:layout_marginRight="15dp"
                 android:gravity="center|left"
                 android:layout_height="match_parent"
-                android:text="/storage/emulated/0/      (存储空间的根目录)"/>
+                android:text="/storage/emulated/0/AIDE"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

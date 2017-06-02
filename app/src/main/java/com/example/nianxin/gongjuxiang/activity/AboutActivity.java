@@ -16,7 +16,7 @@ import com.example.nianxin.gongjuxiang.base.BaseActivity;
  */
 
 public class AboutActivity extends BaseActivity implements View.OnClickListener{
-    private Button bt_shiyong,bt_gongneng,bt_fankui,bt_banben;
+    private Button bt_shiyong,bt_gongneng,bt_fankui,bt_meiriyitu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +33,11 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener{
         bt_fankui=(Button)findViewById(R.id.bt_yijian);
         bt_gongneng=(Button)findViewById(R.id.bt_gongneng);
         bt_shiyong=(Button)findViewById(R.id.bt_shiyong);
-        bt_banben=(Button)findViewById(R.id.bt_banben);
+        bt_meiriyitu=(Button)findViewById(R.id.bt_meiriyitu);
         bt_gongneng.setOnClickListener(this);
         bt_shiyong.setOnClickListener(this);
         bt_fankui.setOnClickListener(this);
-        bt_banben.setOnClickListener(this);
+        bt_meiriyitu.setOnClickListener(this);
     }
 
     public static void  actionStart(Context context){
@@ -66,8 +66,10 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener{
                 finish();
                 About_YiJianActivity.actionStrat(AboutActivity.this);
                 break;
-            case R.id.bt_banben:
-                Toast.makeText(this,"更新功能即将开放，谢谢使用！",Toast.LENGTH_SHORT).show();
+            case R.id.bt_meiriyitu:
+                finish();
+                About_MeRiYiTuAcitvity.actionStrat(AboutActivity.this);
+                break;
             default:
                 break;
         }

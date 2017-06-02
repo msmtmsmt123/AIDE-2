@@ -108,6 +108,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.About_ShiYongActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.About_MeRiYiTuAcitvity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.About_YiJianActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>

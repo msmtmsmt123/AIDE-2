@@ -27,6 +27,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class MyService_beifen extends Service {
     public static List<Map<String, String>> dataList;
@@ -57,17 +58,22 @@ public class MyService_beifen extends Service {
      */
     public void IO(List<Map<String, String>> dataList) {
         try {
-            String fileName = "shuju.txt";
-            //SD卡根目录
-            String SDPATH = Environment.getExternalStorageDirectory().getPath();
-            File file = new File(SDPATH + "//" + fileName);
+            // 为当前的app在内存中新建文件夹
+            File dir1 = new File("storage/emulated/0/AIDE/Text");
+            if (!dir1.exists()) {
+                dir1.mkdirs();
+            }
+            String fileName = new Random().nextInt(999999999) +".txt";
+            //app文件夹目录
+            String SDPATH = "storage/emulated/0/AIDE/Text";
+            File file = new File(SDPATH + "/" + fileName);
             //如果文件不存在，则新建一个文件
             if (!file.exists()) {
                 file.createNewFile();
             }
 
-            FileWriter fw = new FileWriter(SDPATH + "//" + fileName);
-            File f = new File(SDPATH + "//" + fileName);
+            FileWriter fw = new FileWriter(SDPATH + "/" + fileName);
+            File f = new File(SDPATH + "/" + fileName);
             for (int k =0;k<dataList.size();k++) {
                 map = dataList.get(k);
                 Log.d("这里", "onCreate: " + map.get("date"));

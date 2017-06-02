@@ -6,12 +6,14 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -24,10 +26,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,8 +41,14 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.baidu.platform.comapi.map.F;
+import com.bumptech.glide.Glide;
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.base.HttpUtil;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * @author nianxin
@@ -48,14 +58,13 @@ public class FirstActivity extends BaseActivity implements AdapterView.OnItemCli
     private Camera camera = Camera.open();
     private ImageView iv_off_on;
     private ImageView iv_light;
-    //    private Parameters parameter = null;
     private static final String TAG = "ClearMemoryActivity";
     boolean isExit;
     private Camera m_Camera;
     private GridView gview;
     private List<Map<String, Object>> data_list;
     private SimpleAdapter sim_adapter;
-    private TextView textview1;
+
     private int[] icon = {R.drawable.ditu, R.drawable.jsq, R.drawable.bianqianioc,
             R.drawable.shoudian, R.drawable.sosou, R.drawable.danci, R.drawable.dianh, R.drawable.guanyu2};
     private String[] iconName = {"地图", "计算器", "便签", "手电筒", "网络", "速记", "通讯", "关于"};
@@ -79,8 +88,8 @@ public class FirstActivity extends BaseActivity implements AdapterView.OnItemCli
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         // 加载布局
         setContentView(R.layout.first_layout);
-
         gview = (GridView) findViewById(R.id.gview);
+
     }
 
     /**
@@ -229,24 +238,8 @@ public class FirstActivity extends BaseActivity implements AdapterView.OnItemCli
             case 7:
                 AboutActivity.actionStart(FirstActivity.this);
                 break;
-//            default:
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(FirstActivity.this);
-//                dialog.setTitle("退出");
-//                dialog.setMessage("是否确定退出应用？");
-//                dialog.setCancelable(false);
-//                dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        finish();
-//                    }
-//                });
-//                dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                    //instaling apk
-//                });
-//                dialog.show();
-//                break;
+            default:
+                break;
         }
     }
 
@@ -324,4 +317,6 @@ public class FirstActivity extends BaseActivity implements AdapterView.OnItemCli
             camera.release();
         }
     }
+
+
 }
