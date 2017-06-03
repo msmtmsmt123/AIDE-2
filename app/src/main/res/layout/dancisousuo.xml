@@ -46,8 +46,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.125"
                 android:layout_gravity="center"
-                android:layout_marginBottom="7dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:background="@xml/dancisousuoshap"
                 android:src="@drawable/ic_cancel_white_24dp"/>
         </LinearLayout>

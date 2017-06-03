@@ -11,6 +11,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,7 +33,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nianxin.gongjuxiang.R;
+import com.example.nianxin.gongjuxiang.adapter.DanCi;
+import com.example.nianxin.gongjuxiang.adapter.DanCiAdapter;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.db.Danci;
+
+import org.litepal.crud.DataSupport;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -115,6 +124,8 @@ public class SousuoActivity extends BaseActivity implements View.OnClickListener
         bt_home.setOnClickListener(this);
         bt_quxiao.setOnClickListener(this);
         image.setOnClickListener(this);
+        //edittext添加上一个发生变化监听器
+        editText.addTextChangedListener(textWatcher);
         webSettings.setAllowFileAccess(true); // 设置可以访问文件
         webSettings.setSupportZoom(false); // 设置不支持缩放
         webSettings.setJavaScriptEnabled(true); // 设置支持javaSrcipt
@@ -272,6 +283,40 @@ public class SousuoActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
+    /**
+     * wenming
+     * created by:nianxin
+     * created 2017/5/20 16:40.
+     * action:监听文本框变化
+     */
+    private TextWatcher textWatcher = new TextWatcher() {
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            // TODO Auto-generated method stub
+            Log.d("TAG", "afterTextChanged--------------->");
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                                      int after) {
+            // TODO Auto-generated method stub
+            Log.d("TAG", "beforeTextChanged--------------->");
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before,
+                                  int count) {
+
+            estring = editText.getText().toString();
+            if (estring.equals("")){
+                image.setVisibility(View.GONE);
+            }else {
+                image.setVisibility(View.VISIBLE);
+            }
+            }
+
+    };
     /**
      * wenming
      * created by:nianxin

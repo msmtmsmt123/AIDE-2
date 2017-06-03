@@ -64,10 +64,7 @@ public class DanciSousuoActivity extends BaseActivity implements View.OnClickLis
         imageButton.setVisibility(View.GONE);
     }
 
-    public static void actionStart(Context context) {
-        Intent intent = new Intent(context, DanciSousuoActivity.class);
-        context.startActivity(intent);
-    }
+
 
 
  /**
@@ -175,6 +172,11 @@ public class DanciSousuoActivity extends BaseActivity implements View.OnClickLis
     public void finish() {
         super.finish();
         DanciActivity.actionStart(DanciSousuoActivity.this);
+    }
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent(context, DanciSousuoActivity.class);
+        context.startActivity(intent);
     }
 }
 

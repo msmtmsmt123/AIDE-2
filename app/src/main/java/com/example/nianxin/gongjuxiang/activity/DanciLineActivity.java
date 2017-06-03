@@ -47,12 +47,14 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     private List<Danci> danciss = new ArrayList<>();
     private int i = 0;
     private String a;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initWidget();
         //第一次初始化首页默认显示第一个fragment
         initFragment1();
+        textView1.setText("单词数：" + dcs.size());
     }
 
     /**
@@ -79,7 +81,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         btn1.setVisibility(View.GONE);
         tv1 = (TextView) findViewById(R.id.textview1);
         tv1.setText("单词列表");
-        textView1.setText("单词数：" + dcs.size());
+
 
     }
 
@@ -304,6 +306,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+    //显示第五个fragment
     private void initFragment5() {
         b5.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -374,18 +377,14 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    public static void actionStart(Context context,String a) {
-        Intent intent = new Intent(context, DanciLineActivity.class);
-        intent.putExtra("if",a);
-        context.startActivity(intent);
-    }
+
 
     /**
-    * wenming
-    * created by:nianxin
-    * created 2017/5/20 16:38.
-    * action:点击事件
-    */
+     * wenming
+     * created by:nianxin
+     * created 2017/5/20 16:38.
+     * action:点击事件
+     */
     public void onClick(View v) {
         color();
         i = 0;
@@ -406,13 +405,19 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void finish() {
         super.finish();
-        Intent intent=getIntent();
-        String a=intent.getStringExtra("if");
-        Log.d("", "finish: "+a);
-        if (a.equals("1")){
-           DanciYemianActivity.actionStart(DanciLineActivity.this);
-        }else {
+        Intent intent = getIntent();
+        String a = intent.getStringExtra("if");
+        Log.d("", "finish: " + a);
+        if (a.equals("1")) {
+            DanciYemianActivity.actionStart(DanciLineActivity.this);
+        } else {
             DanciActivity.actionStart(DanciLineActivity.this);
         }
-        }
+    }
+
+    public static void actionStart(Context context, String a) {
+        Intent intent = new Intent(context, DanciLineActivity.class);
+        intent.putExtra("if", a);
+        context.startActivity(intent);
+    }
 }
