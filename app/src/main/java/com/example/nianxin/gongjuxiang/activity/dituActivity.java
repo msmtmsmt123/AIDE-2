@@ -35,6 +35,7 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ import java.util.List;
  */
 
 
-public class dituActivity extends AppCompatActivity {
+public class dituActivity extends AppCompatActivity implements initWidgetInterface {
     public LocationClient mlocationclient;
     private TextView positionText;
     private Button button1;

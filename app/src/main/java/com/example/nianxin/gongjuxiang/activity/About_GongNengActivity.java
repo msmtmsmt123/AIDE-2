@@ -6,12 +6,13 @@ import android.os.Bundle;
 
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 /**
  * Created by nianxin on 2017/5/18.
  */
 
-public class About_GongNengActivity extends BaseActivity {
+public class About_GongNengActivity extends BaseActivity implements initWidgetInterface{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +28,7 @@ public class About_GongNengActivity extends BaseActivity {
     public void initWidget(){
         setContentView(R.layout.about_gongneng);
     }
-    public static void actionStrat(Context context){
-        Intent intent=new Intent(context,About_GongNengActivity.class);
-        context.startActivity(intent);
-    }
+
     /**
      * wenming
      * created by:nianxin
@@ -42,4 +40,11 @@ public class About_GongNengActivity extends BaseActivity {
         super.finish();
         AboutActivity.actionStart(About_GongNengActivity.this);
     }
+
+    public static void actionStrat(Context context){
+        Intent intent=new Intent(context,About_GongNengActivity.class);
+        context.startActivity(intent);
+    }
+
+
 }

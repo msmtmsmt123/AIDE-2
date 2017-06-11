@@ -20,6 +20,7 @@ import com.example.nianxin.gongjuxiang.adapter.DanCi;
 import com.example.nianxin.gongjuxiang.adapter.DanCiAdapter;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.Danci;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import org.litepal.crud.DataSupport;
 
@@ -30,7 +31,7 @@ import java.util.List;
  * Created by nianxin on 2017/4/25.
  */
 
-public class DanciSousuoActivity extends BaseActivity implements View.OnClickListener {
+public class DanciSousuoActivity extends BaseActivity implements View.OnClickListener,initWidgetInterface {
     int i = 0;
     private ImageButton button1, imageButton;
     private Button btn1;

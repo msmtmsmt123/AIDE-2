@@ -19,12 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nianxin.gongjuxiang.R;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 import com.example.nianxin.gongjuxiang.service.MyService_beifen;
 import com.example.nianxin.gongjuxiang.service.PhoneService;
 
 import java.util.List;
 
-public class PhoneListenerActivity extends AppCompatActivity implements View.OnClickListener {
+public class PhoneListenerActivity extends AppCompatActivity implements View.OnClickListener ,initWidgetInterface {
     private Button service_strat, service_stop, visibility_go, visibility_nextgo;
     private CheckBox checkBox1, checkBox2;
     public SharedPreferences pre1, pre2;
@@ -43,7 +44,7 @@ public class PhoneListenerActivity extends AppCompatActivity implements View.OnC
 * created 2017/5/20 17:14.
 * action:初始化部件
 */
-    private void initWidget() {
+    public void initWidget() {
         setContentView(R.layout.phonejiemian);
         service_strat = (Button) findViewById(R.id.service_strat);
         service_stop = (Button) findViewById(R.id.service_stop);

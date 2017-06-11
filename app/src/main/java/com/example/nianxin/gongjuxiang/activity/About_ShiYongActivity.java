@@ -12,12 +12,13 @@ import android.widget.TextView;
 
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 /**
  * Created by nianxin on 2017/5/18.
  */
 
-public class About_ShiYongActivity extends BaseActivity implements View.OnClickListener{
+public class About_ShiYongActivity extends BaseActivity implements View.OnClickListener,initWidgetInterface {
     public TextView textView, bb_num;
     private LinearLayout line_url;
 

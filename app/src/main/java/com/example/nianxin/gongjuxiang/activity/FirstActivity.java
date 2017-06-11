@@ -45,6 +45,7 @@ import com.bumptech.glide.Glide;
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.base.HttpUtil;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -53,7 +54,7 @@ import okhttp3.Response;
 /**
  * @author nianxin
  */
-public class FirstActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class FirstActivity extends BaseActivity implements AdapterView.OnItemClickListener , initWidgetInterface {
     int a = 0;
     private Camera camera = Camera.open();
     private ImageView iv_off_on;

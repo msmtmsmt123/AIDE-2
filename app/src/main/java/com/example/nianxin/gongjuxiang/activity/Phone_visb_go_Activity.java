@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.app.Dialog;
 
 import com.example.nianxin.gongjuxiang.R;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 import com.example.nianxin.gongjuxiang.service.MyService_beifen;
 
 import android.content.ContentResolver;
@@ -40,7 +41,7 @@ import android.widget.SimpleAdapter;
 /**
  *
  */
-public class Phone_visb_go_Activity extends Activity {
+public class Phone_visb_go_Activity extends Activity implements initWidgetInterface {
     private ListView mLvShow;
     private List<Map<String, String>> dataList;
     private SimpleAdapter adapter;

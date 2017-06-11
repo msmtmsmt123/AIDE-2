@@ -7,22 +7,30 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.AppLaunchChecker;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.adapter.DanCi;
+import com.example.nianxin.gongjuxiang.adapter.DanCilineAdapter;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.Danci;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 import com.example.nianxin.gongjuxiang.my.MyFragment;
 
 import org.litepal.crud.DataSupport;
@@ -34,12 +42,12 @@ import java.util.List;
  * Created by nianxin on 2017/4/19.
  */
 
-public class DanciLineActivity extends AppCompatActivity implements View.OnClickListener {
+public class DanciLineActivity extends AppCompatActivity implements View.OnClickListener ,initWidgetInterface {
     //fragment
     private MyFragment f1, f2, f3, f4, f5;
     //按钮
     private Button b1, b2, b3, b4, b5;
-
+    public  TextView TV2;
     private TextView tv1;
     private ImageButton btn1;
     private TextView textView1;
@@ -47,6 +55,8 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     private List<Danci> danciss = new ArrayList<>();
     private int i = 0;
     private String a;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +65,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         //第一次初始化首页默认显示第一个fragment
         initFragment1();
         textView1.setText("单词数：" + dcs.size());
+
     }
 
     /**
@@ -71,6 +82,8 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         b3 = (Button) findViewById(R.id.btn3);
         b4 = (Button) findViewById(R.id.btn4);
         b5 = (Button) findViewById(R.id.btn5);
+        TV2 = (TextView) findViewById(R.id.TV2);
+        recyclerView = (RecyclerView) findViewById(R.id.Recycler_view1);
         textView1 = (TextView) findViewById(R.id.textv1);
         btn1 = (ImageButton) findViewById(R.id.button2);
         b1.setOnClickListener(this);
@@ -156,7 +169,6 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         transaction.show(f1);
         //提交事务
         transaction.commit();
-
     }
 
     //显示第二个fragment
@@ -378,7 +390,6 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-
     /**
      * wenming
      * created by:nianxin
@@ -402,6 +413,8 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         textView1.setText("单词数：" + dcs.size());
     }
 
+
+
     @Override
     public void finish() {
         super.finish();
@@ -419,5 +432,29 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(context, DanciLineActivity.class);
         intent.putExtra("if", a);
         context.startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.danci_gone,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.danci:
+                Toast.makeText(DanciLineActivity.this,"点击了菜单1",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.danci2:
+                Toast.makeText(DanciLineActivity.this,"点击了菜单2",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.danci3:
+                Toast.makeText(DanciLineActivity.this,"点击了菜单3",Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 }

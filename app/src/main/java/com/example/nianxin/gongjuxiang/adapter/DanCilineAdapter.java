@@ -14,7 +14,33 @@ import java.util.List;
  */
 
 public class DanCilineAdapter extends RecyclerView.Adapter<DanCilineAdapter.ViewHolder>{
+
     private List<DanCi> danCiList;
+    private RecyclerView recyclerView;
+
+    public DanCilineAdapter (List<DanCi>dcs){
+        danCiList=dcs;
+    }
+
+    @Override
+    public DanCilineAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_danciline,parent,false);
+        DanCilineAdapter.ViewHolder holder=new DanCilineAdapter.ViewHolder(view);
+        return holder;
+    }
+
+    public void onBindViewHolder(DanCilineAdapter.ViewHolder holder, int position) {
+        DanCi danci=danCiList.get(position);
+        holder.dancilinename.setText(danci.getName());
+        holder.dancilinetext.setText(danci.getText());
+        holder.itemView.setTag(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return danCiList.size();
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView dancilinename,dancilinetext;
@@ -24,28 +50,16 @@ public class DanCilineAdapter extends RecyclerView.Adapter<DanCilineAdapter.View
             dancilinetext=(TextView)view.findViewById(R.id.TV2);
         }
     }
-    public DanCilineAdapter (List<DanCi>dcs){
-        danCiList=dcs;
-    }
-    @Override
-    public DanCilineAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_danciline,parent,false);
-        DanCilineAdapter.ViewHolder holder=new DanCilineAdapter.ViewHolder(view);
-        return holder;
-    }
 
 
 
 
-    public void onBindViewHolder(DanCilineAdapter.ViewHolder holder, int position) {
-        DanCi danci=danCiList.get(position);
-        holder.dancilinename.setText(danci.getName());
-        holder.dancilinetext.setText(danci.getText());
-    }
 
-    @Override
-    public int getItemCount() {
-        return danCiList.size();
-    }
+
+
+
+
+
+
+
 }

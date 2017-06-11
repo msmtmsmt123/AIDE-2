@@ -22,6 +22,7 @@ import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.db.Bianqianshuju;
 import com.example.nianxin.gongjuxiang.db.Danci;
 import com.example.nianxin.gongjuxiang.db.SQLiteDbManager;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;
@@ -36,7 +37,7 @@ import java.util.List;
  * Created by nianxin on 2017/4/18.
  */
 
-public class DanciActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+public class DanciActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener ,initWidgetInterface {
     private Button Button1, Button2;
     private Context context;
     private List<Danci> dancis;

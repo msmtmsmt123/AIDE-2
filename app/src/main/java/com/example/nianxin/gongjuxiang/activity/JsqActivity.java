@@ -15,10 +15,11 @@ import android.widget.Toast;
 
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import java.math.BigDecimal;
 
-public class JsqActivity extends BaseActivity implements OnClickListener {
+public class JsqActivity extends BaseActivity implements OnClickListener,initWidgetInterface {
     double num = 0, num1 = 0, num2 = 0, num3 = 0;
     Button qingchu, shanchu, zhengfu, chu, qi, ba, jiu, cheng, si, wu, liu, jian, yi, er, san, jia, ling, dian, deng;
     TextView textViewjsq;

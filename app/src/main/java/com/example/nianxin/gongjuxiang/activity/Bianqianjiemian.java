@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.MyDatabaseHelper;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import static java.security.AccessController.getContext;
 
@@ -26,7 +27,7 @@ import static java.security.AccessController.getContext;
  * Created by nianxin on 2017/3/29.
  */
 
-public class Bianqianjiemian extends BaseActivity implements View.OnClickListener {
+public class Bianqianjiemian extends BaseActivity implements View.OnClickListener,initWidgetInterface {
     public static MyDatabaseHelper dbHelper;
     private ImageButton button2, button1;
     private EditText editText;

@@ -2,14 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="false"
     android:background="@color/huangbai">
     <LinearLayout
+        android:id="@+id/linex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/mibai"
         android:layout_marginTop="0.5dp"
         android:layout_marginBottom="0.5dp"
+        android:clickable="false"
         android:weightSum="1">
         <TextView
             android:id="@+id/TV1"
@@ -21,14 +24,18 @@
             android:background="@null"
             android:textSize="15dp"
             android:text="like"/>
-        <TextView
-            android:id="@+id/TV2"
-            android:layout_width="0dp"
-            android:gravity="left"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_weight="0.6"
-            android:textSize="15dp"
-            android:text="喜欢；喜爱"/>
+
+            <TextView
+                android:id="@+id/TV2"
+                android:layout_width="0dp"
+                android:gravity="left"
+                android:layout_weight="0.5"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:background="@color/huabai"
+                android:textSize="15dp"
+                android:text="喜欢；喜爱"/>
+
     </LinearLayout>
 </LinearLayout>

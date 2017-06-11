@@ -23,6 +23,7 @@ import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.Danci;
 import com.example.nianxin.gongjuxiang.db.SQLiteDbManager;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import org.litepal.crud.DataSupport;
 
@@ -32,7 +33,7 @@ import java.util.List;
  * Created by nianxin on 2017/4/19.
  */
 
-public class DanciYemianActivity extends AppCompatActivity implements View.OnClickListener {
+public class DanciYemianActivity extends AppCompatActivity implements View.OnClickListener ,initWidgetInterface{
     String astring, bstring, name, text;
     TextView textView1, textView2, textview1;
     Button Button1, Button2;

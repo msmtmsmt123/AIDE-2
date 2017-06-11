@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.base.HttpUtil;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -40,7 +41,7 @@ import okhttp3.Response;
  * Created by nianxin on 2017/5/30.
  */
 
-public class About_MeRiYiTuAcitvity extends BaseActivity implements View.OnLongClickListener {
+public class About_MeRiYiTuAcitvity extends BaseActivity implements View.OnLongClickListener,initWidgetInterface {
     private ImageView bingpiimg;
     private SharedPreferences.Editor editor;
     private String bingpic;

@@ -10,12 +10,13 @@ import android.widget.Toast;
 
 import com.example.nianxin.gongjuxiang.R;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 /**
  * Created by nianxin on 2017/3/23.
  */
 
-public class AboutActivity extends BaseActivity implements View.OnClickListener{
+public class AboutActivity extends BaseActivity implements View.OnClickListener,initWidgetInterface {
     private Button bt_shiyong,bt_gongneng,bt_fankui,bt_meiriyitu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

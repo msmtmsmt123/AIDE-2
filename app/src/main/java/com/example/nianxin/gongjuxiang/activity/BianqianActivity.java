@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.platform.comapi.location.CoordinateType;
 import com.example.nianxin.gongjuxiang.R;
@@ -32,6 +33,8 @@ import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.MyDatabaseHelper;
 import com.example.nianxin.gongjuxiang.db.Bianqianshuju;
 import com.example.nianxin.gongjuxiang.db.ShuJu;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +42,7 @@ import java.util.List;
  * Created by nianxin on 2017/3/28.
  */
 
-public class BianqianActivity extends AppCompatActivity implements View.OnClickListener {
+public class BianqianActivity extends AppCompatActivity implements View.OnClickListener ,initWidgetInterface {
     private ImageButton button2, image1;
     private MyDatabaseHelper dbHelper;
     private SQLiteDatabase db;
@@ -49,7 +52,8 @@ public class BianqianActivity extends AppCompatActivity implements View.OnClickL
     private EditText editText;
     private LinearLayout linear1,linear_bq;
     private ImageView imageView;
-
+    private boolean delete=true;
+    private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -231,11 +235,13 @@ public class BianqianActivity extends AppCompatActivity implements View.OnClickL
                 dialog.setCancelable(true);
                 dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Bianqianshuju sj = ShuJ.get(position);
-                        String s = sj.getShuju();
-                        SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        db.delete("Bianqian", "shuju=?", new String[]{s});
+                        view.setVisibility(View.GONE);
                         Snackbar.make(view,"已删除",Snackbar.LENGTH_SHORT).show();
+                            Bianqianshuju sj = ShuJ.get(position);
+                            String s = sj.getShuju();
+                            SQLiteDatabase db = dbHelper.getWritableDatabase();
+                            db.delete("Bianqian", "shuju=?", new String[]{s});
+                            delete=true;
                         ShuJ_que = getdb();
                         listadapter(ShuJ_que);
                         //判断集合中是否有元素，没有则隐藏“搜索便签”布局,并且把页面背景图更换

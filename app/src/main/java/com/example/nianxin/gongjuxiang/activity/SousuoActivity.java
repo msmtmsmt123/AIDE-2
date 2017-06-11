@@ -37,6 +37,7 @@ import com.example.nianxin.gongjuxiang.adapter.DanCi;
 import com.example.nianxin.gongjuxiang.adapter.DanCiAdapter;
 import com.example.nianxin.gongjuxiang.base.BaseActivity;
 import com.example.nianxin.gongjuxiang.db.Danci;
+import com.example.nianxin.gongjuxiang.implement.initWidgetInterface;
 
 import org.litepal.crud.DataSupport;
 
@@ -49,7 +50,7 @@ import java.net.URLConnection;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class SousuoActivity extends BaseActivity implements View.OnClickListener {
+public class SousuoActivity extends BaseActivity implements View.OnClickListener,initWidgetInterface {
     private SwipeRefreshLayout swipeRefresh;
     private String astring = null, bstring = null, cstring = null, dstring = null,estring;
     private DecimalFormat df;
@@ -69,27 +70,6 @@ public class SousuoActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         initWidget();
         edit_action();
-//        //设置刷新事件
-//        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                if(!refreshLayout.canChildScrollUp()) {
-//                    bstring = webView.getUrl();
-//                    webView.loadUrl(bstring);
-//                    refreshLayout.setRefreshing(false);
-//                }
-//            }
-//        });
-//        refreshLayout.setCanChildScrollUpCallback(this);
-//        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            public void onRefresh() {
-//                bstring = webView.getUrl();
-//                webView.loadUrl(bstring);
-//                swipeRefresh.setRefreshing(false);
-//            }
-//        });
-
-
     }
 
     /**
