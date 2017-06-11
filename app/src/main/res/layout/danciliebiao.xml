@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
     android:background="@color/mibai">
-    <com.example.nianxin.gongjuxiang.my.TitleLayout
+    <!--<com.example.nianxin.gongjuxiang.my.TitleLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+    <!--</com.example.nianxin.gongjuxiang.my.TitleLayout>-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </com.example.nianxin.gongjuxiang.my.TitleLayout>
-<LinearLayout
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/OverFlowMenuTheme">
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@null"-->
+            <!--android:src="@drawable/ic_arrow_back_white_24dp" />-->
+        <TextView
+            android:id="@+id/textview1"
+            style="@style/btText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="@string/bianq" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"

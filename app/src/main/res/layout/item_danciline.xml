@@ -22,8 +22,7 @@
             android:gravity="left"
             android:layout_marginLeft="15dp"
             android:background="@null"
-            android:textSize="15dp"
-            android:text="like"/>
+            android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/TV2"
@@ -34,8 +33,7 @@
                 android:clickable="true"
                 android:layout_height="wrap_content"
                 android:background="@color/huabai"
-                android:textSize="15dp"
-                android:text="喜欢；喜爱"/>
+                android:textSize="15dp" />
 
     </LinearLayout>
 </LinearLayout>

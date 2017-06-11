@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,10 @@ import java.util.List;
  */
 @SuppressLint("ValidFragment")
 public class MyFragment extends Fragment {
-    private RecyclerView recyclerView;
+    public static RecyclerView recyclerView;
     private List<DanCi>dcs;
     private LinearLayout linearLayout;
-    private TextView TV2;
+    public static TextView TV1,TV2;
     public static DanCilineAdapter adapter;
     public MyFragment(List<DanCi>dcs ){
         this.dcs=dcs;
@@ -46,9 +47,12 @@ public class MyFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.Recycler_view1);
         View view1=LayoutInflater.from(getActivity()).inflate(R.layout.item_danciline,container,false);
         linearLayout=(LinearLayout)view1.findViewById(R.id.linex);
+        TV1=(TextView)view1.findViewById(R.id.TV1);
+        TV2=(TextView)view1.findViewById(R.id.TV2);
         LinearLayoutManager layoutManager = new LinearLayoutManager(recyclerView.getContext());
         recyclerView.setLayoutManager(layoutManager);
-         adapter = new DanCilineAdapter(dcs);
+         adapter = new DanCilineAdapter(dcs,DanciLineActivity.vis,DanciLineActivity.vis2);
+        Log.d("", "onCreateView: "+DanciLineActivity.vis);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         return view;

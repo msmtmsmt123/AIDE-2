@@ -53,9 +53,6 @@ public class DanciYemianActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         initWidget();
         action();
-//        if (savedInstanceState !=null){
-//            i=savedInstanceState.getInt("shuju");
-//        }
     }
 
     /**
@@ -110,6 +107,10 @@ public class DanciYemianActivity extends AppCompatActivity implements View.OnCli
                 Intent intent = new Intent(DanciYemianActivity.this, DanciLineActivity.class);
                 intent.putExtra("if", "1");
                 startActivity(intent);
+                break;
+            case android.R.id.home:
+                finish();
+                break;
             default:
                 break;
         }
@@ -127,6 +128,8 @@ public class DanciYemianActivity extends AppCompatActivity implements View.OnCli
         //引用Toolbar导航栏
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //设置返回按钮
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         textView1 = (TextView) findViewById(R.id.textView1);
         textView2 = (TextView) findViewById(R.id.textView2);
         textview1 = (TextView) findViewById(R.id.textview1);

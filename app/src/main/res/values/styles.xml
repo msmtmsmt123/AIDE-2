@@ -6,6 +6,15 @@
         <item name="colorPrimary">@color/qianbai</item>
         <item name="colorPrimaryDark">@color/qianbai</item>
         <item name="colorAccent">#FF9D9E9D</item>
+        <item name="overlapAnchor">false</item>
+    </style>
+    <style name="OverFlowMenuTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- 设置Menu菜单的背景色 -->
+        <item name="android:itemBackground">@color/qianbai</item>
+        <!-- 设置Menu菜单的字体颜色 -->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!-- 设置Menu窗口不覆盖Toolbar视图 -->
+        <item name="overlapAnchor">false</item>
     </style>
 
     <style name="zwText">

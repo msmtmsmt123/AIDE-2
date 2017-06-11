@@ -3,15 +3,18 @@ package com.example.nianxin.gongjuxiang.activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.drm.DrmStore;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.AppLaunchChecker;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -42,12 +45,12 @@ import java.util.List;
  * Created by nianxin on 2017/4/19.
  */
 
-public class DanciLineActivity extends AppCompatActivity implements View.OnClickListener ,initWidgetInterface {
+public class DanciLineActivity extends AppCompatActivity implements View.OnClickListener, initWidgetInterface {
     //fragment
     private MyFragment f1, f2, f3, f4, f5;
     //按钮
     private Button b1, b2, b3, b4, b5;
-    public  TextView TV2;
+    private TextView TV1, TV2;
     private TextView tv1;
     private ImageButton btn1;
     private TextView textView1;
@@ -57,6 +60,8 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     private String a;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
+    public static boolean vis = true, vis2 = true;
+    private int framindex=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,24 +82,25 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     public void initWidget() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.danciliebiao);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         b1 = (Button) findViewById(R.id.btn1);
         b2 = (Button) findViewById(R.id.btn2);
         b3 = (Button) findViewById(R.id.btn3);
         b4 = (Button) findViewById(R.id.btn4);
         b5 = (Button) findViewById(R.id.btn5);
+        TV1 = (TextView) findViewById(R.id.TV1);
         TV2 = (TextView) findViewById(R.id.TV2);
         recyclerView = (RecyclerView) findViewById(R.id.Recycler_view1);
         textView1 = (TextView) findViewById(R.id.textv1);
-        btn1 = (ImageButton) findViewById(R.id.button2);
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         b4.setOnClickListener(this);
         b5.setOnClickListener(this);
-        btn1.setVisibility(View.GONE);
         tv1 = (TextView) findViewById(R.id.textview1);
         tv1.setText("单词列表");
-
 
     }
 
@@ -120,6 +126,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
      */
     //显示第一个fragment
     private void initFragment1() {
+        framindex=1;
         b1.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         //开启事务，fragment的控制是由事务来实现的
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -173,6 +180,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     //显示第二个fragment
     private void initFragment2() {
+        framindex=2;
         b2.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (f2 == null) {
@@ -224,6 +232,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     //显示第三个fragment
     private void initFragment3() {
+        framindex=3;
         b3.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -272,6 +281,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     //显示第四个fragment
     private void initFragment4() {
+        framindex=4;
         b4.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -320,6 +330,7 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     //显示第五个fragment
     private void initFragment5() {
+        framindex=5;
         b5.setBackgroundColor(Color.parseColor("#FFE7DFCC"));
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -414,7 +425,6 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-
     @Override
     public void finish() {
         super.finish();
@@ -436,25 +446,52 @@ public class DanciLineActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.danci_gone,menu);
+        getMenuInflater().inflate(R.menu.danci_gone, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        i=0;
+        switch (item.getItemId()) {
             case R.id.danci:
-                Toast.makeText(DanciLineActivity.this,"点击了菜单1",Toast.LENGTH_SHORT).show();
+                vis = false;
+                vis2 = true;
                 break;
             case R.id.danci2:
-                Toast.makeText(DanciLineActivity.this,"点击了菜单2",Toast.LENGTH_SHORT).show();
+                vis = true;
+                vis2 = false;
                 break;
             case R.id.danci3:
-                Toast.makeText(DanciLineActivity.this,"点击了菜单3",Toast.LENGTH_SHORT).show();
+                vis = true;
+                vis2 = true;
+                break;
+            case android.R.id.home:
+                finish();
                 break;
             default:
                 break;
         }
-        return true;
+        switch (framindex){
+            case 1:
+                initFragment1();
+                break;
+            case 2:
+                initFragment2();
+                break;
+            case 3:
+                initFragment3();
+                break;
+            case 4:
+                initFragment4();
+                break;
+            case 5:
+                initFragment5();
+                break;
+            default:
+                break;
+        }
+        Log.d("这里", "onOptionsItemSelected: "+framindex);
+            return true;
     }
 }

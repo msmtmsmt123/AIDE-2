@@ -91,6 +91,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DanciLineActivity"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DanciYemianActivity"

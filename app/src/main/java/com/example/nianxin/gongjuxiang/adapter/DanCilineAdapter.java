@@ -17,9 +17,12 @@ public class DanCilineAdapter extends RecyclerView.Adapter<DanCilineAdapter.View
 
     private List<DanCi> danCiList;
     private RecyclerView recyclerView;
+    private boolean vis=true,vis2=true;
 
-    public DanCilineAdapter (List<DanCi>dcs){
+    public DanCilineAdapter (List<DanCi>dcs,boolean vis,boolean vis2){
         danCiList=dcs;
+        this.vis=vis;
+        this.vis2=vis2;
     }
 
     @Override
@@ -32,8 +35,12 @@ public class DanCilineAdapter extends RecyclerView.Adapter<DanCilineAdapter.View
 
     public void onBindViewHolder(DanCilineAdapter.ViewHolder holder, int position) {
         DanCi danci=danCiList.get(position);
-        holder.dancilinename.setText(danci.getName());
-        holder.dancilinetext.setText(danci.getText());
+        if (vis==true) {
+            holder.dancilinename.setText(danci.getName());
+        }
+        if (vis2==true) {
+            holder.dancilinetext.setText(danci.getText());
+        }
         holder.itemView.setTag(position);
     }
 
@@ -43,7 +50,7 @@ public class DanCilineAdapter extends RecyclerView.Adapter<DanCilineAdapter.View
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView dancilinename,dancilinetext;
+        public static TextView dancilinename,dancilinetext;
         public ViewHolder(View view) {
             super(view);
             dancilinename=(TextView)view.findViewById(R.id.TV1);
